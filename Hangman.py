@@ -1,3 +1,6 @@
+# This program can b used to play hangman
+import random
+
 def replace(word, character, index):
 	try:
 		return word[:index] + character + word[index + 1:]
@@ -5,9 +8,10 @@ def replace(word, character, index):
 		return word[:index] + character
 
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
-word = 'drawer'
+words = ['jazz', 'refrigerator', 'beautiful', 'rhythm', 'bookworm', 'croquet', 'knapsack', 'mystify', 'glowworm', 'numbskull', 'oxygen', 'pizazz', 'rhubarb', 'pixel', 'unknown']
+word = random.choice(words)
 Guessed_word = '_' * len(word)
-Lives = 5
+Lives = 7
 a = 0
 
 while Lives > 0 and a == 0:
@@ -36,7 +40,7 @@ while Lives > 0 and a == 0:
 			if guess == ch:
 				Guessed_word = replace(Guessed_word, guess, index)
 			index += 1
-		print('Hooray! You guessed a correct letter!')
+		print('\n' + 'Hooray! You guessed a correct letter!')
 	else:
 		if Lives != 1:
 			print('\n' + 'Try Again!')
@@ -51,4 +55,5 @@ if a == 1:
 	print('\n' + 'You Win!')
 else:
 	print('\n' + 'You Lose!')
+	print('The word was:', word)
 
