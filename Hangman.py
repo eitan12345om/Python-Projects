@@ -1,12 +1,12 @@
 def replace(word, character, index):
 	try:
-		return word[:index] + character + word[index + 2:]
+		return word[:index] + character + word[index + 1:]
 	except IndexError:
 		return word[:index] + character
 
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
-word = 'apple'
-Guessed_word = '_ ' * len(word)
+word = 'drawer'
+Guessed_word = '_' * len(word)
 Lives = 5
 a = 0
 
@@ -14,7 +14,7 @@ while Lives > 0 and a == 0:
 	
 	Valid_Guess = False
 	while Valid_Guess == False:
-		print('\n' + Guessed_word)
+		print('\n' + Guessed_word, '(' + str(len(word)) + ' characters long)')
 		print('Available letters to guess:', alphabet)
 		
 		if Lives != 1:
