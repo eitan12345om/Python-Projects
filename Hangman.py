@@ -8,7 +8,7 @@ def replace(word, character, index):
 		return word[:index] + character
 
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
-words = ['jazz', 'refrigerator', 'beautiful', 'rhythm', 'bookworm', 'croquet', 'knapsack', 'mystify', 'glowworm', 'numbskull', 'oxygen', 'pizazz', 'rhubarb', 'pixel', 'unknown']
+words = ['jazz', 'refrigerator', 'beautiful', 'rhythm', 'bookworm', 'croquet', 'knapsack', 'mystify', 'glowworm', 'numbskull', 'oxygen', 'pizazz', 'rhubarb', 'pixel', 'unknown', 'zombie', 'vortex']
 word = random.choice(words)
 Guessed_word = '_' * len(word)
 Lives = 7
