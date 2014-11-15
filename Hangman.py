@@ -58,11 +58,21 @@ while Play_again == 'y':
 
 	if Win == 1:
 		Wins += 1
-		print('\n' + 'You Win!' + '(' + str(Wins) + ' wins/' + str(Losses) + ' losses)')
+		print('\n' + 'You Win!')
 	else:
 		Losses += 1
 		print('\n' + 'You Lose!' + '(' + str(Wins) + ' wins/' + str(Losses) + ' losses)')
 		print('The word was:', word)
+	if Wins == 1:
+		if Losses == 1:
+			print('(' + str(Wins) + ' win/' + str(Losses) + ' loss)')
+		else:
+			print('(' + str(Wins) + ' win/' + str(Losses) + ' losses)')
+	else:
+		if Losses == 1:
+			print('(' + str(Wins) + ' wins/' + str(Losses) + ' loss)')
+		else:
+			print('(' + str(Wins) + ' wins/' + str(Losses) + ' losses)')
 
 	while Valid_Guess == True:
 		print('\n')
