@@ -8,6 +8,8 @@ def replace(word, character, index):
 		return word[:index] + character
 
 Play_again = 'y'
+Wins = 0
+Losses = 0
 
 while Play_again == 'y':
 	alphabet = 'abcdefghijklmnopqrstuvwxyz'
@@ -55,14 +57,18 @@ while Play_again == 'y':
 			print('\n' + word)
 
 	if Win == 1:
-		print('\n' + 'You Win!')
+		Wins += 1
+		print('\n' + 'You Win!' + '(' + str(Wins) + ' wins/' + str(Losses) + ' losses)')
 	else:
-		print('\n' + 'You Lose!')
+		Losses += 1
+		print('\n' + 'You Lose!' + '(' + str(Wins) + ' wins/' + str(Losses) + ' losses)')
 		print('The word was:', word)
 
 	while Valid_Guess == True:
 		print('\n')
 		Play_again = input('Do you want to play again (y/n)? ')
+		if Play_again.isalpha():
+			Play_again = Play_again.lower()
 		if Play_again == 'y':
 			print('Good luck!')
 			Valid_Guess = False
