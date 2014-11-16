@@ -39,7 +39,7 @@ while Play_again == 'y':
 			elif len(guess) > 1:
 				print('Must be 1 character!')
 			elif guess.isalpha():
-				print('Already been guessed!')
+				print('You already guessed this letter!')
 			else:
 				print('Must be a letter!')
 		
@@ -67,16 +67,15 @@ while Play_again == 'y':
 		Losses += 1
 		print('\n' + 'You Lose!' + '(' + str(Wins) + ' wins/' + str(Losses) + ' losses)')
 		print('The word was:', word)
+	
 	if Wins == 1:
-		if Losses == 1:
-			print('(' + str(Wins) + ' win/' + str(Losses) + ' loss)')
-		else:
-			print('(' + str(Wins) + ' win/' + str(Losses) + ' losses)')
+		Win_Loss_Count = '(' + str(Wins) + ' win'
 	else:
-		if Losses == 1:
-			print('(' + str(Wins) + ' wins/' + str(Losses) + ' loss)')
-		else:
-			print('(' + str(Wins) + ' wins/' + str(Losses) + ' losses)')
+		Win_Loss_Count = '(' + str(Wins) + ' wins'
+	if Losses == 1:
+		print(Win_Loss_Count + '/' + str(Losses) + ' loss)')
+	else:
+		print(Win_Loss_Count + '/' + str(Losses) + ' losses)')
 
 	while Valid_Guess == True:
 		print('\n')
