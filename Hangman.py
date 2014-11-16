@@ -32,8 +32,7 @@ while Play_again == 'y':
 				print('You have', Lives, 'life left')
 			
 			guess = input('Guess one character: ')
-			if guess.isalpha():
-				guess = guess.lower()
+			guess = guess.lower()
 			if guess in alphabet:
 				Valid_Guess = True
 			elif len(guess) > 1:
@@ -80,8 +79,7 @@ while Play_again == 'y':
 	while Valid_Guess == True:
 		print('\n')
 		Play_again = input('Do you want to play again (y/n)? ')
-		if Play_again.isalpha():
-			Play_again = Play_again.lower()
+		Play_again = Play_again.lower()
 		if Play_again == 'y':
 			print('Good luck!')
 			Valid_Guess = False
