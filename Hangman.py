@@ -36,8 +36,12 @@ while Play_again == 'y':
 				guess = guess.lower()
 			if guess in alphabet:
 				Valid_Guess = True
+			elif len(guess) > 1:
+				print('Must be 1 character!')
+			elif guess.isalpha():
+				print('Already been guessed!')
 			else:
-				print('Oops! Invalid Guess!')
+				print('Must be a letter!')
 		
 		if guess in word:
 			index = 0
