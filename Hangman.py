@@ -8,8 +8,7 @@ def replace(word, character, index):
 		return word[:index] + character
 
 Play_again = 'y'
-Wins = 0
-Losses = 0
+Wins, Losses = 0, 0
 
 while Play_again == 'y':
 	alphabet = 'abcdefghijklmnopqrstuvwxyz'
