@@ -7,16 +7,13 @@ def replace(word, character, index):
 	except IndexError:
 		return word[:index] + character
 
-Play_again = 'y'
-Wins, Losses = 0, 0
+Play_again, Wins, Losses = 'y', 0, 0
 
 while Play_again == 'y':
 	alphabet = 'abcdefghijklmnopqrstuvwxyz'
-	words = ['jazz', 'refrigerator', 'beautiful', 'rhythm', 'bookworm', 'croquet', 'knapsack', 'mystify', 'glowworm', 'numbskull', 'oxygen', 'pizazz', 'rhubarb', 'pixel', 'unknown', 'zombie', 'vortex']
-	word = random.choice(words)
+	word = random.choice(['jazz', 'refrigerator', 'beautiful', 'rhythm', 'bookworm', 'croquet', 'knapsack', 'mystify', 'glowworm', 'numbskull', 'oxygen', 'pizazz', 'rhubarb', 'pixel', 'unknown', 'zombie', 'vortex'])
 	Guessed_word = '_' * len(word)
-	Lives = 7
-	Win = 0
+	Lives, Win = 7, 0
 
 	while Lives > 0 and Win == 0:
 		
