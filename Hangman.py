@@ -8,10 +8,12 @@ def replace(word, character, index):
 		return word[:index] + character
 
 Play_again, Wins, Losses = 'y', 0, 0
+words = ['jazz', 'refrigerator', 'beautiful', 'rhythm', 'bookworm', 'croquet', 'knapsack', 'mystify', 'glowworm', 'numbskull', 'oxygen', 'pizazz', 'rhubarb', 'pixel', 'unknown', 'zombie', 'vortex']
 
 while Play_again == 'y':
 	alphabet = 'abcdefghijklmnopqrstuvwxyz'
-	word = random.choice(['jazz', 'refrigerator', 'beautiful', 'rhythm', 'bookworm', 'croquet', 'knapsack', 'mystify', 'glowworm', 'numbskull', 'oxygen', 'pizazz', 'rhubarb', 'pixel', 'unknown', 'zombie', 'vortex'])
+	word = random.choice(words)
+	words = words.remove(word)
 	Guessed_word = '_' * len(word)
 	Lives, Win = 7, 0
 
@@ -72,7 +74,7 @@ while Play_again == 'y':
 	else:
 		print(Win_Loss_Count + '/' + str(Losses) + ' losses)')
 
-	while Valid_Guess == True:
+	while Valid_Guess == True and words:
 		print('\n')
 		Play_again = input('Do you want to play again (y/n)? ')
 		Play_again = Play_again.lower()
@@ -84,3 +86,7 @@ while Play_again == 'y':
 			Valid_Guess = False
 		else:
 			print("Please enter either 'y' or 'n'")
+	else:
+		print('\n' + 'Out of words!')
+		print('See you next time!')
+		Play_again = 'n'
