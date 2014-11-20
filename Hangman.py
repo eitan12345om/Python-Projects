@@ -13,7 +13,7 @@ words = ['jazz', 'refrigerator', 'beautiful', 'rhythm', 'bookworm', 'croquet', '
 while Play_again == 'y':
 	alphabet = 'abcdefghijklmnopqrstuvwxyz'
 	word = random.choice(words)
-	words = words.remove(word)
+	words.remove(word)
 	Guessed_word = '_' * len(word)
 	Lives, Win = 7, 0
 
@@ -74,18 +74,19 @@ while Play_again == 'y':
 	else:
 		print(Win_Loss_Count + '/' + str(Losses) + ' losses)')
 
-	while Valid_Guess == True and words:
-		print('\n')
-		Play_again = input('Do you want to play again (y/n)? ')
-		Play_again = Play_again.lower()
-		if Play_again == 'y':
-			print('Good luck!')
-			Valid_Guess = False
-		elif Play_again == 'n':
-			print('See you next time!')
-			Valid_Guess = False
-		else:
-			print("Please enter either 'y' or 'n'")
+	if words:
+		while Valid_Guess == True:
+			print('\n')
+			Play_again = input('Do you want to play again (y/n)? ')
+			Play_again = Play_again.lower()
+			if Play_again == 'y':
+				print('Good luck!')
+				Valid_Guess = False
+			elif Play_again == 'n':
+				print('See you next time!')
+				Valid_Guess = False
+			else:
+				print("Please enter either 'y' or 'n'")
 	else:
 		print('\n' + 'Out of words!')
 		print('See you next time!')
