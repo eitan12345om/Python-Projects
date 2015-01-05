@@ -45,7 +45,7 @@ while Human_Health > 0 and Computer_Health > 0:
 		Selection = input("Select your move: ")
 		print('\n')
 		if not Selection.isnumeric():
-			print("Unknown Option Selected!")
+			print("Please type in a number corresponding to a menu option!")
 			print('Your health:', str(Human_Health) + '     ' + 'Computer health:', str(Computer_Health) + '\n')
 		else:
 			Selection = int(Selection)
