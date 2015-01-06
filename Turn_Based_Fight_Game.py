@@ -73,11 +73,15 @@ while Human_Health > 0 and Computer_Health > 0:
 				heal = random.randrange(18, 26)
 				Human_Health = healing(heal, Human_Health)
 				print("You've been healed", str(heal), 'life points!')
-			else:
+			elif Blade_poisoned == False and Selection == 4:
 				Blade_poisoned = True
 				print("You've poisoned your blade!")
+			else:
+				Move = False
+				print("Please type in a number corresponding to a menu option!")
+				print('Your health:', str(Human_Health) + '     ' + 'Computer health:', str(Computer_Health) + '\n')
 
-	if Computer_Health > 0:			
+	if Computer_Health > 0 and Human_Health > 0:			
 		print('Your health:', str(Human_Health) + '     ' + 'Computer health:', str(Computer_Health) + '\n')			
 	time.sleep(1)
 
